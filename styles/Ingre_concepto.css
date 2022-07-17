@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #10283a;
+    --color-secundary:#ffffff;
+    --color-tertiary:#ffde59;
+    --color-quaternary:#eeede9;
+    --color-quintary:#bebdb994;
+    --text-m: 40px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.nav {
+    width: 95%;
+    height: 80px;
+    background-color: var(--color-primary);
+    margin: 10px 48px 10px 48px;
+    border-radius: 14px;
+    box-shadow: 0px 8px 10px rgb(51, 51, 51);
+}
+
+.nav-container {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-name {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-name .nav-name--icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../Assets/img/Pefil.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-name .nav-name--name {
+    width: 150px;
+    text-align: center;
+    color: var(--color-secundary);
+}
+
+.nav-name .nav-name--name p {
+    font-size: var(--text-m);
+    font-weight: 500;
+    color: var(--color-tertiary);
+}
+.nav-logo {
+    width: 220px;
+    height: auto;
+    font-size: var(--text-m);
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo span {
+    color: var(--color-secundary);
+}
+
+/***Aside**************/
+
+.date-container {
+    display: flex;
+}
+
+aside {
+    width: 20%;
+    height: 85vh;
+    margin-left: 48px;
+    background-color: var(--color-primary);
+    border-radius: 24px;
+    box-shadow: 0px 10px 10px black;
+}
+
+.menu-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-container h3 {
+    width: 100%;
+    padding: 5px 0 14px 0;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: solid 1px var(--color-quaternary);
+    margin-top: 14px;
+    margin-bottom: 24px;
+    color: var(--color-primary);
+}
+
+
+.menu-container ul {
+    list-style: none;
+    width: 100%;
+}
+
+.menu-container ul:nth-child(1){
+    background-color: var(--color-tertiary);
+}
+
+.menu-container ul li {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4px;
+    margin-left: 14px;
+}
+
+.menu-container ul li a i img {
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    margin-left: 8px;
+}
+
+.menu-container ul li:hover {
+    background-color: var(--color-tertiary);
+    transition: 1.2s;
+    position: relative;
+    left: 8px;
+    border-radius: 6px;
+    margin-top: 14px;
+}
+
+.menu-container ul li a {
+    width: 100%;
+    text-decoration: none;
+    color: var(--color-secundary);
+    font-size: 14px;
+}
+
+.menu-container ul li a:hover {
+    font-size: 18px;
+    transition: 1s;
+    color: var(--color-primary);
+}
+
+.menu-container-exit {
+    width: 100%;
+    height: 50px;
+    bottom: 56px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu-container-exit a{
+    text-decoration: none;
+    background-color: var(--color-quaternary);
+    width: 80%;
+    height: 90%;
+    background-color: var(--color-tertiary);
+    border-radius: 34px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color: var(--color-primary);
+    font-weight: 700;
+    box-shadow: 4px 4px 6px black;
+}
+
+.menu-container-exit a:hover {
+    background-color: var(--color-secundary);
+    transition: 1s;
+}
+
+/******Ingreso de Datos******/
+
+.date-container-student {
+    width: 70%;
+    height: 600px;
+    box-shadow: 0px 10px 10px black;
+    margin: auto;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.date-container-student .formulario {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 500px;
+}
+
+.formulario .video-date {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario .video-date video{
+    width: 300px;
+    height: 300px;
+    margin-top: 60px;
+}
+
+.formulario form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulario form input {
+    width: 350px;
+    height: 34px;
+    padding-left: 10px;
+    margin-top: 14px;
+    outline: none;
+}
+
+.date-container-student-tittle {
+    padding: 10px;
+}
+
+.date-container-student-tittle h3 {
+    font-size: 24px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+.date-container-student  .btn {
+    width: 300px;
+    height: 34px;
+    border: none;
+    border-radius: 14px;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin: auto;
+
+}
+
+.date-container-student .btn:hover {
+    background-color: var(--color-secundary);
+    border: 1px solid var(--color-primary);
+    transition: 1s;
+    cursor: pointer;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/registro_estudiante.css">
+    <link rel="shortcut icon" href="../Assets/icons/storytelling.png" />
+
+    <title>Registro</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>App-Notes</span>
+                </div>
+                <div class="nav-name">
+                    <div class="nav-name--icon">
+
+                    </div>
+                    <div class="nav-name--name">
+                        <p>Name</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Ingreso de Datos-->
+    <section class="date-container">
+        <aside>
+            <div class="menu-container">
+                <div>
+                    <h3>Registro</h3>
+                </div>
+                <ul>
+                    <li><a href="../html/registro_estudiante.html"><i><img src="../Assets/icons/estudiante.png"
+                                    alt=""></i>Registrar Estudiantes</a>
+                    </li>
+                    <li><a href="../html/date_student.html"><i><img src="../Assets/icons/cheked.png"
+                        alt=""></i>Datos Estudiantes</a>
+                    </li>
+                    <li><a href="../html/Ingre_concepto.html"><i><img src="../Assets/icons/bosquejo.png" alt=""></i>
+                            Procesos Evalución</a></li>
+                    <li><a href="../html/cal_notes.html"><i><img src="../Assets/icons/cheque.png" alt=""></i> Calcular
+                            Notas</a></li>
+                    <li><a href="../html/date.html"><i><img src="../Assets/icons/informacion-personal.png" alt=""></i>
+                            Datos</a></li>
+                </ul>
+                <div class="menu-container-exit">
+                    <a href="../index.html">Volver</a>
+                </div>
+            </div>
+        </aside>
+        <section class="date-container-student">
+            <div class="formulario">
+                <div class="video-date">
+                    <img src="../Assets/vector/developer-team.png" alt="">
+                </div>
+                <form action="" id="registroEstudiante">
+                    <div class="date-container-student-tittle">
+                        <h3>Ingresar datos del Estudiante</h3>
+                    </div>
+                    <input type="number" name="CodStudiante" id="CodStudiante"
+                        placeholder="Ingrese Codigo del estudiante" required>
+                    <input type="text" name="nombres" id="nombres" placeholder="Ingrese nombre del estudiante" required>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese los apellidos" required>
+                    <input type="text" name="semestre" id="semestre" placeholder="Ingrese el Semestre" required>
+                    <input type="text" name="materia" id="materia" placeholder="Ingrese la Materia" required>
+                    <input type="email" name="email" id="email" placeholder="Ingrese correo de Estudiante" required>
+                    <input type="datetime-local" name="date" id="date" required>
+                </form>
+            </div>
+            <button value="Guardar dato" class="btn" id="btn-student" onclick="guardarEstudiante()">Guardar</button>
+        </section>
+    </section>
+</body>
+
+<!--Importamos firebase-->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<!--Importamos nuestros scipts-->
+<script src="../src/configuracion.js"></script>
+<script src="../src/guardar.js"></script>
+<!--Alertas-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

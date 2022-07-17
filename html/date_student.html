@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/date_student.css">
+    <link rel="shortcut icon" href="../Assets/icons/storytelling.png" />
+    
+    <!--inocono fontawesome-->
+    <script src="https://kit.fontawesome.com/e0bd086848.js" crossorigin="anonymous"></script>
+
+    <!-- links para exportar a excel -->
+    <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+
+    <title>Estudiantes</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>App-Notes</span>
+                </div>
+                <div class="nav-name">
+                    <div class="nav-name--icon">
+
+                    </div>
+                    <div class="nav-name--name">
+                        <p>Jairo</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Ingreso de Datos-->
+    <section class="date-container">
+        <aside>
+            <div class="menu-container">
+                <div>
+                    <h3>Datos</h3>
+                </div>
+                <ul>
+                    <li><a href="../html/registro_estudiante.html"><i><img src="../Assets/icons/estudiante.png"
+                                    alt=""></i>Registrar Estudiantes</a>
+                    </li>
+                    <li><a href="../html/date_student.html"><i><img src="../Assets/icons/cheked.png" alt=""></i>Datos
+                            Estudiantes</a>
+                    </li>
+                    <li><a href="../html/Ingre_concepto.html"><i><img src="../Assets/icons/bosquejo.png" alt=""></i>
+                            Procesos Evalución</a></li>
+                    <li><a href="../html/cal_notes.html"><i><img src="../Assets/icons/cheque.png" alt=""></i> Calcular
+                            Notas</a></li>
+                    <li><a href="../html/date.html"><i><img src="../Assets/icons/informacion-personal.png" alt=""></i>
+                            Datos</a></li>
+                </ul>
+                <div class="menu-container-exit">
+                    <a href="../index.html">Volver</a>
+                </div>
+            </div>
+        </aside>
+        <section class="date-container-student">
+
+
+            <!--Update student-->
+            <section class="date-container-student">
+                <div class="container" id="containerupdate">
+                    <form>
+                        <div class="mb-2">
+                            <input type="number" class="form-control" id="CodStudent"
+                                placeholder="Codigo nuevo Estudiantes" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" class="form-control" id="apellidosEs" placeholder="Apellidos Estudiante"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="nombreEs" class="form-control" placeholder="Ingrese los Nombres"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="materiaEs" class="form-control" placeholder="Ingrese Materia"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" id="semestreEs" class="form-control" placeholder="Ingrese Semestre"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-2">
+                            <input type="email" id="correoEs" class="form-control" placeholder="Ingrese Correo"
+                                id="exampleInputPassword1">
+                        </div>
+                        <button class="btn btn-primary" id="enviarDatosEstudent">Editar</button>
+                    </form>
+                </div>
+
+
+                <!--table stundent -->
+                <div class="menu-container-exit--date">
+                    <div class="container-button">
+                        <button class="xcel" id="btnExportar">
+                            <span>
+                                <i class="fa fa-file-excel fa-1x"></i>
+                            </span>
+                        </button>
+                        <button class="pdf" id="btnExport">
+                            <span>
+                                <i class="fa fa-file-pdf fa-1x"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <table class="table" id="tabla">
+                        <thead>
+                            <tr>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Apellidos</th>
+                                <th scope="col">Nombres</th>
+                                <th scope="col">Materia</th>
+                                <th scope="col">Semestre</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+</body>
+<!--Boostrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+<!--firebase-->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!--sScript Jquery para exportar tabla a PDF-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+<!--Mis scripts-->
+<script src="../src/configuracion.js"></script>
+<script src="../src/imprimiDatosEstudientes.js"></script>
+
+<!--Alertas-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- script para exportar a excel -->
+<script>
+    const $btnExportar = document.querySelector("#btnExportar"),
+        $tabla = document.querySelector("#tabla");
+
+    $btnExportar.addEventListener("click", function () {
+        let tableExport = new TableExport($tabla, {
+            exportButtons: false, // No queremos botones
+            filename: "Reporte de prueba", //Nombre del archivo de Excel
+            sheetname: "Reporte de prueba", //Título de la hoja
+        });
+        let datos = tableExport.getExportData();
+        let preferenciasDocumento = datos.tabla.xlsx;
+        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+    });
+</script>
+
+<!--Exportar tabla a PDF-->
+<script type="text/javascript">
+    $("body").on("click", "#btnExport", function () {
+        html2canvas($('#tabla')[0], {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("customer-details.pdf");
+            }
+        });
+    });
+</script>
+
+</html>
